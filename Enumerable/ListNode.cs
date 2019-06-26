@@ -5,29 +5,28 @@ using System.Text;
 
 namespace Enumerable
 {
-    partial class ListNode<T> : IEnumerable<T>
+    class ListNode<T> : IEnumerable<T>
     {
         public ListNode(T item)
         {
             value = item;
         }
+
         public T value;
         public ListNode<T> next;
-        private ListNode<T> currentNode;
+        private ListNode<T> _cuurentNode;
 
         public void Add(T item)
         {
-            if(currentNode == null)
+            if (_cuurentNode == null)
             {
                 next = new ListNode<T>(item);
-                currentNode = next; 
-                //currentNode = new ListNode(item);
+                _cuurentNode = next;
             }
-
             else
             {
-                currentNode.next = new ListNode<T>(item);
-                currentNode = currentNode.next;
+                _cuurentNode.next = new ListNode<T>(item);
+                _cuurentNode = _cuurentNode.next;
             }
         }
 
@@ -38,12 +37,12 @@ namespace Enumerable
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return new Enumerator(this);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
 
         private class Enumerator : IEnumerator<T>
