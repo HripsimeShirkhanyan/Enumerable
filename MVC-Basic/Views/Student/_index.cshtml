@@ -1,0 +1,39 @@
+﻿@using MVC_Basic.Models
+@model IList<MVC_Basic.Models.Student>
+@{
+    ViewData["Title"] = "_index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>
+    _index
+</h1>
+
+@for (int i = 0; i <Model.Count; i++) 
+{
+
+<tr>
+    <td>
+        <span>@Model[@i].Id</span>@*de mnacacnel du gri el chem tanji qez*@
+    </td>
+    <td>
+        <span>@Model[@i].Name</span>@*de mnacacnel du gri el chem tanji qez*@
+    </td>
+    <td>
+        <span>@Model[@i].Age</span>@*de mnacacnel du gri el chem tanji qez es br-n nor tox a?ha*@
+    </td>
+    <td>
+        <span>@Model[@i].Department</span><br />@*de mnacacnel du gri el chem tanji qez*@
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.Name)<br />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)<br />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department)<br />
+        </td>*@
+
+</tr>
+}
+

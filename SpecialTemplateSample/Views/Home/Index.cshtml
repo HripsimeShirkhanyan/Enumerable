@@ -1,0 +1,32 @@
+﻿@model SpecialTemplateSample.Models.Person
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>EditorFor</h2>
+<form method="post" name="M">
+
+    @Html.LabelFor(x => x.Id)<br />
+    @Html.EditorFor(x => x.Id)<br />
+
+    @Html.LabelFor(x => x.Name)<br />
+    @Html.EditorFor(x => x.Name)<br />
+
+    @Html.LabelFor(x => x.Role)<br />
+    @Html.EditorFor(x => x.Role)<br />
+
+</form>
+
+<h2>DisplayFor</h2>
+
+
+@Html.LabelFor(x => x.Id)
+@Html.DisplayFor(x => x.Id)<br />
+
+@Html.LabelFor(x => x.Name)
+@Html.DisplayFor(x => x.Name)<br />
+
+@Html.LabelFor(x => x.Role)
+@Html.DisplayFor(x => x.Role)<br />
+

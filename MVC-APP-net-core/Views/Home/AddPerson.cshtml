@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "AddPerson";
+}
+
+<h1>AddPerson</h1>
+
+<form method="post" action="/Home/Add" >
+    FirstName: <input type="text" name="FirstName" value="" />    
+    LastName: <input type="text" name="LastName" value="" /> 
+    Age: <input type="number" name="Age" min="1" max="120" value=""/>
+    <textarea></textarea>
+    <button type="submit">Save</button> 
+</form>
+

@@ -1,0 +1,11 @@
+﻿@model IList<MVC_test.Models.Employee>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    <h>@Model[@i].Id</h>
+    <h>@Model[@i].Name</h>
+    <h>@Model[@i].Email</h>
+}

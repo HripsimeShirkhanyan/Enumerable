@@ -1,0 +1,64 @@
+﻿@model MVC_Basic.Models.Student
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>   @*ModelOnly-n inch a,,, en vor harcrecir es mase vonc em grel, aseci add view-ov,
+            tenc kareli a? te piti dzerqov grvi? srancic vor mase angir sovorem, 
+            et nshanakuma vor validatione menak modeli hamar nayi, :D aysinqn ete orinak urish property unennaq vor inqe mer modeli e
+            modeli mje chi mtnum, inqe et cuyc chi ta, haskaca, modele du  haskaci en inche menq post enq anelu, voch te stexi grac modele
+                                                                                     ok? okn
+                                                                                     che tenc ban chen anum, ches el kara anes
+                                                                                     ka design :D prosoto sovorelu hamar oka
+isk stexic petq a inch vor baner sovorem, hishem ev ayln steix yndamene imaci vor form-e vonc en post anum:D submit button-ov,
+                                                                                     heto modele arjeqnere stanuma name -ev value 
+                                                                                     attributnerov, html atributner
+                                                                                     asp-for vor graca et razorna, inqe sarguma 
+                                                                                     name value=
+        asp-for="Id" - n havasar name="Id" value="Id-i valuen" haskacar? es inch romantik ban er :D :D :D :D shat hacheli er
+                                                                                     apres urish? 
+
+            *@
+                <input type="hidden" asp-for="Id" class="hidden" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                @*Ete es toxe grac chliner et karmir tarerov error message cheinq tena, gites inchn a hima hetaqrqir,
+                    irakan kyanqum en qo grac@ misht ka? aveli konkret en dashteri hamar voronq required en piti ham en grac lini
+                    ham stexi es hatvace? @
+                <span asp-validation-for="Name" class="text-danger"></span> @*isk es validatione? inchn a validate anum, vonc*@
+            </div>
+            <div class="form-group">
+                <label asp-for="Department" class="control-label"></label>
+                <input asp-for="Department" class="form-control" />
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" /> @*btn-primary?*@
+            </div>
+        </form>
+        @for(int i = 0;i<Model.ErrMsgs?.Count;i++)
+        {
+            <span class="text-danger">@Model.ErrMsgs[@i]</span>
+        }
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
